@@ -46,8 +46,14 @@ app.use("/api/widgets", widgetsRoutes(db));
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+const sqlQuery = "SELECT * FROM items;";
+
 app.get("/", (req, res) => {
-  res.render("index");
+  db.query(sqlQuery)
+  .then(data => {
+    const templateVars = { items: data.rows }
+    res.render("index", templateVars);
+  })
 });
 
 app.listen(PORT, () => {
