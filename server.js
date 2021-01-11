@@ -16,6 +16,13 @@ const dbParams = require('./lib/db.js');
 const db = new Pool(dbParams);
 db.connect();
 
+//Cookies
+// const cookieSession = require("cookie-session");
+// app.use(cookieSession({
+//   name: 'session',
+//   keys: ['key1', 'key2']
+// }));
+
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
@@ -48,8 +55,15 @@ app.use("/", itemRoutes(db));
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+const sqlQuery = "SELECT * FROM items;";
+
 app.get("/", (req, res) => {
-  res.render("index");
+  db.query(sqlQuery)
+  .then(data => {
+    const templateVars = { items: data.rows }
+    console.log(templateVars);
+    res.render("index", templateVars);
+  })
 });
 
 app.listen(PORT, () => {
