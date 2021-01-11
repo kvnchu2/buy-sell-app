@@ -11,8 +11,9 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script src="https://kit.fontawesome.com/77de315972.js" crossorigin="anonymous"></script>
   </head>
-
-  <body id="item-page-body">
+  <body>
+    <%- include('partials/_header') %>
+    <div class="item-page-body">
     <div id="item-box">
       <% const capitalize = (s) => {
         if (typeof s !== 'string') return ''
@@ -43,5 +44,6 @@
         <button type="submit" class="btn btn-primary">Send</button>
       </div>
     <% } %>
+  </div>
   </body>
 </html>
