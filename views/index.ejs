@@ -8,14 +8,11 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   </head>
   <body>
-<<<<<<< HEAD
     <%- include('partials/_header') %>
-=======
     <div class="item-grid">
-    <% for (let item of items) { %>
-      <div class="item"> <header><p><%= item.name %></p><img src="<%= item.image_url %>" /></header><footer><p><%= ("$" + item.price / 100) %></p><a><p class="star-btn">❤️</p></a></footer></div>
-    <% } %>
+      <% for (let item of items) { %>
+        <div class="item"> <header><p><%= item.name %></p><img src="<%= item.image_url %>" /></header><footer><p><%= ("$" + item.price / 100) %></p><a><p class="star-btn">❤️</p></a></footer></div>
+      <% } %>
     </div>
->>>>>>> b1290d55da6645b07705eacb6a76ca94de7b4581
   </body>
 </html>
