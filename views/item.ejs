@@ -26,5 +26,17 @@
         <p class="star-btn">❤️</p>
       </div>
     </div>
+    <% console.log(user_id, item.seller_id) %>
+    <% if (parseInt(user_id, 10) === parseInt(item.seller_id, 10)) { %>
+      <div id="mark-as-sold">
+        <button>Mark as sold</button>
+      </div>
+    <% } else { %>
+      <div id="message-box">
+        <label for="message">Message Seller</label>
+        <input class="form-control" type="text" name="message" style="width: 300px; margin: 1em">
+        <button type="submit" class="btn btn-primary">Send</button>
+      </div>
+    <% } %>
   </body>
 </html>
