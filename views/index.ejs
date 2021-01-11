@@ -6,13 +6,21 @@
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script src="https://kit.fontawesome.com/77de315972.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <%- include('partials/_header') %>
     <div class="item-grid">
-      <% for (let item of items) { %>
-        <div class="item"> <header id="item-header"><p><%= item.name %></p><img src="<%= item.image_url %>" /></header><footer><p><%= ("$" + item.price / 100) %></p><a><p class="star-btn">❤️</p></a></footer></div>
-      <% } %>
+    <% for (let item of items) { %>
+      <% const capitalize = (s) => {
+        if (typeof s !== 'string') return ''
+        return s.charAt(0).toUpperCase() + s.slice(1)
+      }   %>
+      <div class="item"><a href="http://localhost:8080/item/<%=item.id%>"><header><img src="<%= item.image_url %>" /><p><%= capitalize(item.name) %></p></header><footer><p><%= ("$" + item.price / 100) %></p><a href="http://google.com" target="_blank"><i class="fas fa-heart"></i></a></footer></a></div>
+    <% } %>
     </div>
   </body>
 </html>
