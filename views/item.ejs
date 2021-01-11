@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home Page</title>
+    <title>Item Page</title>
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -12,15 +12,24 @@
     <script src="https://kit.fontawesome.com/77de315972.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
-    <div class="item-grid">
-    <% for (let item of items) { %>
+  <body id="item-page-body">
+    <div id="item-box">
       <% const capitalize = (s) => {
         if (typeof s !== 'string') return ''
         return s.charAt(0).toUpperCase() + s.slice(1)
       }   %>
-      <div class="item"><a href="http://localhost:8080/item/<%=item.id%>"><header><img src="<%= item.image_url %>" /><p><%= capitalize(item.name) %></p></header><footer><p><%= ("$" + item.price / 100) %></p><a href="http://google.com" target="_blank"><i class="fas fa-heart"></i></a></footer></a></div>
-    <% } %>
+      <div id="title-and-date">
+        <h1 id="item-title"> <%= capitalize(item.name) %></h1>
+        <p>Posted on: <%= item.date_posted %></p>
+      </div>
+      <div>
+        <img id="item-image" src= <%= item.image_url %>
+      </div>
+      <div id="price-and-description">
+        <p> $<%= (item.price)/100 %> <p>
+        <p> <%= capitalize(item.description) %> <p>
+        <a href="http://google.com" target="_blank" style="text-decoration: none; color: #244751;"><i class="fas fa-heart"></i></a>
+      </div>
     </div>
   </body>
 </html>
