@@ -12,6 +12,8 @@
   </head>
 
   <body>
-    <h1>Hello World! </h1>
+    <% for (let item of items) { %>
+      <p> <%= item.name %></p>
+    <% } %>
   </body>
 </html>
