@@ -11,18 +11,20 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
 
-  <body id="item-body">
-    <div id="title-and-date">
-      <h1 id="item-title"> <%= item.name %></h1>
-      <p>Posted on: <%= item.date_posted %></p>
+  <body>
+    <div id="item-box">
+      <div id="title-and-date">
+        <h1 id="item-title"> <%= item.name %></h1>
+        <p>Posted on: <%= item.date_posted %></p>
+      </div>
+      <div>
+        <img id="item-image" src= <%= item.image_url %>
+      </div>
+      <div id="price-and-description">
+        <p> $<%= (item.price)/100 %> <p>
+        <p> <%= item.description %> <p>
+        <p class="star-btn"> ☆ </p>
+      </div>
     </div>
-    <img id="item-image" src= <%= item.image_url %> >
-    <div id="price-and-description">
-      <p> $<%= (item.price)/100 %> <p>
-      <p> <%= item.description %> <p>
-      <p id="favourite-button"> ❤️ </p>
-    </div>
-
-
   </body>
 </html>

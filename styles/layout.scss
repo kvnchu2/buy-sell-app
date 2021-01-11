@@ -52,3 +52,30 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+
+// Item Page
+
+#item-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 28px 28px;
+  border: solid #20381f;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  background-color: lightblue;
+  img {
+    width: 400px;
+  }
+  #price-and-description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #title-and-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
