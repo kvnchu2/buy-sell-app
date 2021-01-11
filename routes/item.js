@@ -8,7 +8,8 @@ module.exports = (db) => {
     console.log(params)
     db.query(sql, [params.id])
       .then(data => {
-        const templateVars = {item: data.rows[0]};
+        const templateVars = {item: data.rows[0], user_id: req.session.user_id};
+        console.log("user id", templateVars.user_id, "item seller id", templateVars.item.seller_id)
         res.render("item", templateVars);
       })
       .catch(err => {
