@@ -9,12 +9,19 @@
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script src="https://kit.fontawesome.com/77de315972.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
+    <%- include('partials/_header') %>
+  <body id="item-page-body">
     <div id="item-box">
+      <% const capitalize = (s) => {
+        if (typeof s !== 'string') return ''
+        return s.charAt(0).toUpperCase() + s.slice(1)
+      }   %>
       <div id="title-and-date">
-        <h1 id="item-title"> <%= item.name %></h1>
+        <h1 id="item-title"> <%= capitalize(item.name) %></h1>
         <p>Posted on: <%= item.date_posted %></p>
       </div>
       <div>
@@ -22,8 +29,8 @@
       </div>
       <div id="price-and-description">
         <p> $<%= (item.price)/100 %> <p>
-        <p> <%= item.description %> <p>
-        <p class="star-btn">❤️</p>
+        <p> <%= capitalize(item.description) %> <p>
+        <a href="http://google.com" target="_blank" style="text-decoration: none; color: #244751;"><i class="fas fa-heart"></i></a>
       </div>
     </div>
     <% console.log(user_id, item.seller_id) %>
