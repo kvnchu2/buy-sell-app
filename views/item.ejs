@@ -11,10 +11,9 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script src="https://kit.fontawesome.com/77de315972.js" crossorigin="anonymous"></script>
   </head>
-
   <body>
     <%- include('partials/_header') %>
-  <body id="item-page-body">
+    <div class="item-page-body">
     <div id="item-box">
       <% const capitalize = (s) => {
         if (typeof s !== 'string') return ''
@@ -36,7 +35,9 @@
     <% console.log(user_id, item.seller_id) %>
     <% if (parseInt(user_id, 10) === parseInt(item.seller_id, 10)) { %>
       <div id="mark-as-sold">
-        <button>Mark as sold</button>
+        <form action='sold/<%=item.id%>' method="POST">
+          <button>Mark as sold</button>
+        </form>
       </div>
     <% } else { %>
       <div id="message-box">
@@ -45,5 +46,6 @@
         <button type="submit" class="btn btn-primary">Send</button>
       </div>
     <% } %>
+  </div>
   </body>
 </html>
