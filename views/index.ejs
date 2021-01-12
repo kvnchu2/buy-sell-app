@@ -8,22 +8,29 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script defer type="text/javascript" src="/scripts/app.js"></script>
     <script src="https://kit.fontawesome.com/77de315972.js" crossorigin="anonymous"></script>
-    <script> const itemName = "<%= items.id %>" </script>
+
   </head>
   <body>
     <%- include('partials/_header') %>
     <div class="item-grid">
+    <% const favouritesID = []; %>
+    <% favourites.forEach(x => favouritesID.push(x['item_id'])); %>
     <% for (let item of items) { %>
-      <% if (!item.is_sold) { %>
-      <% const capitalize = (s) => {
-        if (typeof s !== 'string') return ''
-        return s.charAt(0).toUpperCase() + s.slice(1)
-      }   %>
+      <% if (!item.is_sold && favouritesID.indexOf(item.id) === -1) { %>
+      <% const capitalize = (s) => { %>
+      <%  if (typeof s !== 'string') return '' %>
+      <%  return s.charAt(0).toUpperCase() + s.slice(1) %>
+      <% }   %>
       <div class="item">
-        <a href="http://localhost:8080/item/<%=item.id%>"><header><img src="<%= item.image_url %>" /><p style="font-weight: bold;"><%= capitalize(item.name) %></p></header><hr style="font-size: 1px; opacity: 0.5; color: #008B8B;"><footer><p style="font-weight: bold; font-size: large;"><%= ("$" + item.price / 100) %></p><i class="fas fa-heart"></i></footer></a></div>
-    <% } }%>
+        <a href="http://localhost:8080/item/<%=item.id%>"><header><img src="<%= item.image_url %>" /><p style="font-weight: bold;"><%= capitalize(item.name) %></p></header><hr style="font-size: 1px; opacity: 0.5; color: #008B8B;"><footer><p style="font-weight: bold; font-size: large;"><%= ("$" + item.price / 100) %></p><i class="fas fa-heart" data-item="<%= item.id %>"></i></footer></a></div>
+    <% } else { %>
+      <div class="item">
+        <a href="http://localhost:8080/item/<%=item.id%>"><header><img src="<%= item.image_url %>" /><p style="font-weight: bold;"><%= capitalize(item.name) %></p></header><hr style="font-size: 1px; opacity: 0.5; color: #008B8B;"><footer><p style="font-weight: bold; font-size: large;"><%= ("$" + item.price / 100) %></p><i class="fas fa-heart" data-item="<%= item.id %>"></i></footer></a></div>
+    <% }%>
     </div>
   </body>
 </html>
+
+

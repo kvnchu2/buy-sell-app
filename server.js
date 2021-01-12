@@ -68,14 +68,20 @@ app.use("/", favourites(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 const sqlQuery = "SELECT * FROM items;";
+const favsQuery = "SELECT * FROM favourites WHERE user_id = $1;"
 
 app.get("/", (req, res) => {
   db.query(sqlQuery)
   .then(data => {
     const templateVars = { items: data.rows }
-    res.render("index", templateVars);
+    db.query(favsQuery, [req.session.user_id])
+    .then(data => {
+      templateVars.favourites = data.rows;
+      res.render("index", templateVars);
+    })
+
   })
-});
+})
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
