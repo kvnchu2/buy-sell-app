@@ -49,7 +49,8 @@ const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const itemRoutes = require("./routes/item");
 const loginRoutes = require("./routes/login");
-const postad = require("./routes/postad")
+const postad = require("./routes/postad");
+const search = require("./routes/search");
 
 
 // Mount all resource routes
@@ -59,6 +60,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/item", itemRoutes(db));
 app.use("/", loginRoutes(db));
 app.use("/", postad(db));
+app.use("/", search(db));
 // Note: mount other resources here, using the same pattern above
 
 
