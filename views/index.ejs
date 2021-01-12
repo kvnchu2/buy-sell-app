@@ -15,12 +15,13 @@
     <%- include('partials/_header') %>
     <div class="item-grid">
     <% for (let item of items) { %>
+      <% if (!item.is_sold) { %>
       <% const capitalize = (s) => {
         if (typeof s !== 'string') return ''
         return s.charAt(0).toUpperCase() + s.slice(1)
       }   %>
       <div class="item"><a href="http://localhost:8080/item/<%=item.id%>"><header><img src="<%= item.image_url %>" /><p><%= capitalize(item.name) %></p></header><footer><p><%= ("$" + item.price / 100) %></p><a href="http://google.com" target="_blank"><i class="fas fa-heart"></i></a></footer></a></div>
-    <% } %>
+    <% }} %>
     </div>
   </body>
 </html>
