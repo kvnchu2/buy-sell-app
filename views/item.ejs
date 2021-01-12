@@ -20,16 +20,16 @@
         return s.charAt(0).toUpperCase() + s.slice(1)
       }   %>
       <div id="title-and-date">
-        <h1 id="item-title"> <%= capitalize(item.name) %></h1>
-        <p>Posted on: <%= item.date_posted %></p>
-      </div>
-      <div>
-        <img id="item-image" src= <%= item.image_url %>
+        <h1 id="item-title" style="padding-top: 14px;"> <%= capitalize(item.name) %></h1>
+        <p style="font-size: 28px;"> $<%= (item.price)/100 %> </p>
       </div>
       <div id="price-and-description">
-        <p> $<%= (item.price)/100 %> <p>
-        <p> <%= capitalize(item.description) %> <p>
-        <a href="http://google.com" target="_blank" style="text-decoration: none; color: #244751;"><i class="fas fa-heart"></i></a>
+        <p style="line-height: 0.1em; font-weight: bold;"> <%= capitalize(item.description) %></p>
+      <a href="http://google.com" target="_blank" style="text-decoration: none; color: #244751;"><i class="fas fa-heart">&nbsp;Favourite</i></a>
+      </div>
+
+      <div style="display: flex; justify-content: center;">
+        <img id="item-image" style="text-align: center;" src= <%= item.image_url %>
       </div>
     </div>
     <% console.log(user_id, item.seller_id) %>
@@ -39,10 +39,11 @@
       </div>
     <% } else { %>
       <div id="message-box">
-        <label for="message">Message Seller</label>
+        <label for="message" style="font-weight: bold;">Message Seller</label>
         <input class="form-control" type="text" name="message" style="width: 300px; margin: 1em">
         <button type="submit" class="btn btn-primary">Send</button>
       </div>
+      <p style="display: flex; justify-content: center;">Posted: <%= item.date_posted.toString().slice(0,15) %></p>
     <% } %>
   </div>
   </body>

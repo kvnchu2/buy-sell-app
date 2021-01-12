@@ -1,7 +1,7 @@
 // See: https://sass-lang.com/
 
 body {
-  background-color: #cccccc;
+  background-color: #bbc4c4;
 
   h1 {
     color: #244751;
@@ -30,7 +30,7 @@ body {
 
 #post-ad-button {
   padding-right: 25px;
-}
+};
 
 
 //Home page
@@ -45,16 +45,16 @@ body {
 
 .item {
   padding: 15px 15px;
-  border: transparent #20381f;
+  border: solid #20381f;
   border-width: 2px;
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 7px;
-  background-color: #e4e4e4;
+  background-color: #e8e6e6;;
   img {
     height: 150px;
     border-radius: 3px;
-    width: auto;
+    max-width: 250px;
   }
   a {
     text-decoration: none;
@@ -64,23 +64,35 @@ body {
     line-height: 3em;
   }
   i:hover {
-    color: red;
+    color: #f59e42;
     transform: translateY(-1px) scale(1.03);
   }
-}
+  header {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #20381f;
+    line-height: 0.01em;
+  }
+};
 
 .item:hover {
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.45em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.195em 0.5em;
   transform: translateY(-3px) scale(1.05);
+  border: solid #f59e42;
 }
 
 .star-btn:hover {
   background-color: gold;
 }
 
-header {
-  font-size: 19px;
-}
 
 #item-header {
   font-size: 15px;
@@ -89,11 +101,6 @@ header {
   flex-direction: column;
   align-items: center;
   padding-bottom: 0;
-}
-
-footer {
-  display: flex;
-  justify-content: space-between;
 }
 
 // Item Page
@@ -116,23 +123,47 @@ footer {
   background-color: #e8e6e6;
   width: 50em;
   img {
-    width: 400px;
+    max-height: 250px;
     border-radius: 5px;
+    max-width: 28em;
   }
   #price-and-description {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    border: solid #bbc4c4;
+    border-radius: 16px;
+    border-width: 1px;
+    padding: 10px 18px;
+    background-color: white;
   }
   #title-and-date {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-weight: bold;
+    color: #20381f;
+    font-size: 14px;
   }
   .fas:hover {
-    color: red;
+    background-color: #f59e42;
     transform: translateY(-1px) scale(1.03);
   }
+  .fas {
+    border: solid #20381f;
+    padding: 10px 10px;
+    border-radius: 10px;
+  }
 }
-
+.btn-primary {
+  border: solid #20381f;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+.btn-primary:hover {
+  background-color: #f59e42;
+}
 
