@@ -1,7 +1,6 @@
-DROP TABLE IF EXISTS messages CASCADE;
-CREATE TABLE messages (
+DROP TABLE IF EXISTS conversations CASCADE;
+CREATE TABLE conversations (
   id SERIAL PRIMARY KEY NOT NULL,
-  content VARCHAR(255) NOT NULL,
   from_user INTEGER REFERENCES users(id) NOT NULL,
   item_id INTEGER REFERENCES items(id) NOT NULL
 );
