@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Post Ad Page</title>
+
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script src="https://kit.fontawesome.com/77de315972.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <%- include('partials/_header') %>
+    <div id="postad-form">
+      <form method="POST" action="/postad">
+        <label>Title</label>
+        <input type="text" name="title" ></input>
+        <label>Categories</label>
+        <select id = "categories-dropdown" placeholder="categories" name="categories">
+          <option value="" disabled selected>Categories</option>
+          <option value = "1">Cars</option>
+          <option value = "2">Misc</option>
+          <option value = "3">Pets</option>
+          <option value = "4">Furniture</option>
+          <option value = "5">Electronics</option>
+          <option value = "6">Real Estate</option>
+          <option value = "7">Clothing</option>
+          <option value = "8">Toys/Games</option>
+          <option value = "9">Appliances</option>
+          <option value = "10">Tools</option>
+          <option value = "11">Sporting Goods</option>
+          <option value = "12">Books</option>
+        </select>
+        <label>Price</label>
+        <input type="number" name="price"></input>
+        <label>Image URL</label>
+        <input type="text" name="image"></input>
+        <button type="submit" value="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
