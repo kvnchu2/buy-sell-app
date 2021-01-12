@@ -32,20 +32,40 @@ body {
   padding-right: 25px;
 };
 
+.btn-outline-dark {
+  border: solid #20381f;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+.btn-outline-dark:hover {
+  background-color: #f59e42;
+  transform: translateY(-1px) scale(1.02);
+}
+#nav-input, #categories-dropdown {
+  border: solid #20381f;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+#nav-input:hover, #categories-dropdown:hover {
+  background-color: #f59e42;
+}
+
 a.button {
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
-
   text-decoration: none;
   color: initial;
+}
+.button:hover {
+  color: #f59e42;
 }
 
 //Home page
 .item-grid{
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  grid-template-columns: repeat(3, minmax(275px, 1fr));
   grid-auto-rows: 290px;
   padding: 28px 28px;
   padding-top: 120px;
@@ -58,11 +78,11 @@ a.button {
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 7px;
-  background-color: #e8e6e6;;
+  background-color: #e8e6e6;
   img {
     height: 150px;
     border-radius: 3px;
-    max-width: 250px;
+    max-width: 320px;
   }
   a {
     text-decoration: none;
@@ -94,7 +114,7 @@ a.button {
 .item:hover {
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.45em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.195em 0.5em;
   transform: translateY(-3px) scale(1.05);
-  border: solid #f59e42;
+  border: solid #008B8B;
 }
 
 .star-btn:hover {
@@ -117,6 +137,7 @@ a.button {
   display: flex;
   justify-content: center;
   padding-top: 120px;
+  padding-bottom: 20px;
 }
 
 #item-box {
@@ -133,19 +154,20 @@ a.button {
   img {
     max-height: 250px;
     border-radius: 5px;
-    max-width: 28em;
+    max-width: 45em;
   }
   #price-and-description {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     padding-left: 20px;
     border: solid #bbc4c4;
     border-radius: 16px;
     border-width: 1px;
-    padding: 10px 18px;
-    background-color: white;
+    padding: 20px 18px;
+    background-color: #008b8ba5;
   }
   #title-and-date {
     display: flex;
@@ -164,6 +186,7 @@ a.button {
     border: solid #20381f;
     padding: 10px 10px;
     border-radius: 10px;
+    background-color: #bbc4c4;
   }
 }
 .btn-primary {
@@ -173,10 +196,43 @@ a.button {
 }
 .btn-primary:hover {
   background-color: #f59e42;
+  transform: translateY(-1px) scale(1.02);
+}
+.form-control {
+  border: solid #20381f;
+  padding: 3px 10px;
+  border-radius: 10px;
+  height: 40px;
+}
+.form-control:hover {
+  background-color: #f59e42;
 }
 
 //post-ad
 
 #postad-form {
-  padding-top: 400px;
+  display: inline-block;
+  width: 500px;
+  line-height: 2em;
+}
+
+#post-ad-submit {
+  border: solid #20381f;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+
+.post-ad-page {
+  border: solid black;
+  margin-left: 18px;
+  margin-right: 18px;
+  border-radius: 18px;
+  padding-top: 18px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: auto;
+  background-color: #f59e42;
 }

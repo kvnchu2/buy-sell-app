@@ -21,8 +21,8 @@
         return s.charAt(0).toUpperCase() + s.slice(1)
       }   %>
       <div class="item">
-        <a href="http://localhost:8080/item/<%=item.id%>"><header><img src="<%= item.image_url %>" /><p style="font-weight: bold;"><%= capitalize(item.name) %></p></header><hr style="font-size: 1px; opacity: 0.5"><footer><p style="font-weight: bold; font-size: large;"><%= ("$" + item.price / 100) %></p><a href="http://google.com" target="_blank" id="heart-btn"><i class="fas fa-heart"></i></a></footer></a></div>
-    <% } %>
+        <a href="http://localhost:8080/item/<%=item.id%>"><header><img src="<%= item.image_url %>" /><p style="font-weight: bold;"><%= capitalize(item.name) %></p></header><hr style="font-size: 1px; opacity: 0.5; color: #008B8B;"><footer><p style="font-weight: bold; font-size: large;"><%= ("$" + item.price / 100) %></p><a href="http://google.com" target="_blank" id="heart-btn"><i class="fas fa-heart"></i></a></footer></a></div>
+    <% } }%>
     </div>
   </body>
 </html>
