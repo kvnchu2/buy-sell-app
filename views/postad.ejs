@@ -16,8 +16,8 @@
     <%- include('partials/_header') %>
     <div id="postad-form">
       <form method="POST" action="/postad">
-        <label>Title</label>
-        <input type="text" name="title" ></input>
+        <label>Name</label>
+        <input type="text" name="name" ></input>
         <label>Categories</label>
         <select id = "categories-dropdown" placeholder="categories" name="categories">
           <option value="" disabled selected>Categories</option>
@@ -36,6 +36,8 @@
         </select>
         <label>Price</label>
         <input type="number" name="price"></input>
+        <label>Description</label>
+        <input type="text" name="description"></input>
         <label>Image URL</label>
         <input type="text" name="image"></input>
         <button type="submit" value="submit">Submit</button>
