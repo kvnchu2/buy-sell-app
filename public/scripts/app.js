@@ -7,4 +7,12 @@ $(() => {
       $("<div>").text(user.name).appendTo($("body"));
     }
   });;
+
+  $('.fa-heart').click(() => {
+    $.post("/favourites", {itemName: itemName})
+      .done(() => {
+        console.log('done');
+      })
+  })
 });
+
