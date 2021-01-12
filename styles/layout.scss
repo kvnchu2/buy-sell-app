@@ -32,6 +32,14 @@ body {
   padding-right: 25px;
 }
 
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  text-decoration: none;
+  color: initial;
+}
 
 //Home page
 .item-grid{
@@ -136,3 +144,8 @@ footer {
 }
 
 
+//post-ad
+
+#postad-form {
+  padding-top: 400px;
+}
