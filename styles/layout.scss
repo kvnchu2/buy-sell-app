@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,600;1,200&display=swap');
 
 body {
-  background-color: #dbdfdf;
+  background-color: #edf2f2;
 
   h1 {
     color: black;
@@ -18,7 +18,7 @@ body {
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #4669a7;
+  background-color: #4a82de;
   height: 100px;
   position: fixed;
   top: 0;
@@ -34,22 +34,28 @@ body {
   padding-right: 25px;
 };
 
+#post-ad-nav {
+  border: transparent;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+
+#post-ad-nav:hover {
+  transform: translateY(-1px) scale(1.02);
+}
+
 .btn-outline-dark {
-  border: solid #20381f;
+  border: transparent;
   padding: 3px 10px;
   border-radius: 10px;
 }
 .btn-outline-dark:hover {
-  background-color: #f59e42;
   transform: translateY(-1px) scale(1.02);
 }
 #nav-input, #categories-dropdown {
-  border: solid #20381f;
+  border: transparent;
   padding: 3px 10px;
   border-radius: 10px;
-}
-#nav-input:hover, #categories-dropdown:hover {
-  background-color: #f59e42;
 }
 
 a.button {
@@ -73,7 +79,7 @@ a.button {
 }
 .item-grid{
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   grid-template-columns: repeat(3, minmax(320px, 320px));
   grid-auto-rows: 258px;
   padding: 68px 68px;
@@ -82,23 +88,17 @@ a.button {
 }
 
 .item {
-  padding: 15px 15px;
+  padding: 1px 10px;
   border: transparent;
   border-width: 2px;
   padding-top: 1px;
   padding-bottom: 10px;
   border-radius: 7px;
   background-color: white;
-  box-shadow:rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
-  background-size: 100% 77%;
+  background-size: 100% 70%;
   background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
-
-  // img {
-  //   height: 150px;
-  //   border-radius: 22px;
-  //   max-width: 320px;
-  // }
+  box-shadow: rgba(2, 8, 20, 0.3) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
   a {
     text-decoration: none;
     color: black;
@@ -108,8 +108,11 @@ a.button {
     font-size: 25px;
   }
   i:hover {
+<<<<<<< HEAD
     color: #f23a3a;
-    transform: translateY(-1px) scale(1.03);
+=======
+>>>>>>> b9a44b0e352cacc28cb04312cc4f8037b65ec22e
+    transform: translateY(-1px) scale(1.2);
   }
   header {
     font-size: 18px;
@@ -134,22 +137,32 @@ a.button {
     flex-wrap: wrap;
     padding-top: 122px;
     font-size: 16px;
+<<<<<<< HEAD
+=======
+  }
+  .fas:hover {
+    color: #f23a3a;
+>>>>>>> b9a44b0e352cacc28cb04312cc4f8037b65ec22e
   }
 };
 
 .item:hover {
   box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.195em 1em;
-  transform: translateY(-3px) scale(1.02);
+  transform: translateY(-3px) scale(1.06);
 }
 
+<<<<<<< HEAD
 fa-heart {
   box-shadow: rgba(254, 0, 0, 0.6) 0px 1em 1.175em;
 }
+
+=======
 
 #fas-fa-heart {
   color: red;
 }
 
+>>>>>>> b9a44b0e352cacc28cb04312cc4f8037b65ec22e
 #item-header {
   font-size: 15px;
   font-weight: bold;
@@ -158,6 +171,7 @@ fa-heart {
   align-items: center;
   padding-bottom: 0;
 }
+
 
 // Item Page
 
@@ -181,10 +195,12 @@ fa-heart {
   background-color: white;
   box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.195em 1em;
   width: 50em;
+  color: black;
   img {
     max-height: 250px;
     border-radius: 5px;
     max-width: 45em;
+    box-shadow: rgba(2, 8, 20, 0.4) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
   }
   #price-and-description {
     display: flex;
@@ -195,6 +211,7 @@ fa-heart {
     padding-left: 20px;
     padding: 20px 18px;
     background-color: white;
+    color: black;
   }
   #title-and-date {
     display: flex;
@@ -205,16 +222,7 @@ fa-heart {
     color: #20381f;
     font-size: 14px;
   }
-  .fas:hover {
-    background-color: #f59e42;
-    transform: translateY(-1px) scale(1.03);
-  }
-  .fas {
-    border: solid #20381f;
-    padding: 10px 10px;
-    border-radius: 10px;
-    background-color: #bbc4c4;
-  }
+
 }
 .btn-primary {
   border: solid #20381f;
@@ -233,7 +241,44 @@ fa-heart {
 }
 .form-control:hover {
   background-color: #f59e42;
+<<<<<<< HEAD
 }
+
+#message-seller {
+  border: transparent;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background-color: #f59e42;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: rgba(2, 8, 20, 0.4) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+}
+#message-seller:hover {
+  transform: translateY(-1px) scale(1.02);
+}
+
+#mark-as-sold {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#mark-as-sold-btn:hover {
+  transform: translateY(-1px) scale(1.02);
+}
+
+#mark-as-sold-btn {
+  border: transparent;
+  padding: 14px 10px;
+  border-radius: 10px;
+  background-color: #f59e42;
+  box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
 
 //post-ad
 h1 {
@@ -241,31 +286,218 @@ h1 {
 }
 
 #postad-form {
-  display: inline-block;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 500px;
   line-height: 2em;
   font-family: 'Montserrat', sans-serif;
+  input, select {
+    background-color: #4a82de;
+    color: white;
+  }
 }
 
 #post-ad-submit {
-  border: solid #20381f;
+  border: solid #4a82de 2px;
   padding: 3px 10px;
   border-radius: 10px;
   font-family: 'Montserrat', sans-serif;
+  background-color: white;
+}
+#post-ad-submit:hover {
+  background-color: #4a82de;
+  color: white;
 }
 
 .post-ad-page {
-  border: solid black;
+  border: transparent;
   margin-left: 100px;
   margin-right: 100px;
   border-radius: 18px;
-  padding-top: 18px;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  padding-top: 58px;
+  padding-bottom: 58px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: auto;
-  background-color: #f59e42;
+  background-color: white;
   font-family: 'Montserrat', sans-serif;
+  box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+}
+
+//Messages
+
+#conversations {
+  border: transparent 1px;
+  background-color: white;
+  border-radius: 20px;
+  height: 300px;
+  width: 400px;
+  padding-left: 15px;
+  padding-right: 8px;
+  box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+  p {
+    padding-top: 12px;
+    padding-left: 8px;
+  }
+  p:hover {
+    transform: translateY(-1px) scale(1.02);
+  }
+}
+
+.conversations-box {
+  display: grid;
+  justify-content: center;
+  gap: 1em;
+  input {
+    border: transparent;
+    padding: 3px 10px;
+    border-radius: 10px;
+    padding-right: 220px;
+    height: 50px;
+    box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+  }
+  button {
+    background-color: #4a82de;
+    border: transparent;
+    padding: 3px 10px;
+    border-radius: 10px;
+    width: 75px;
+    justify-content: center;
+    box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+  }
+}
+
+=======
+}
+
+#message-seller {
+  border: transparent;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background-color: #f59e42;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: rgba(2, 8, 20, 0.4) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+}
+#message-seller:hover {
+  transform: translateY(-1px) scale(1.02);
+}
+
+#mark-as-sold {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#mark-as-sold-btn:hover {
+  transform: translateY(-1px) scale(1.02);
+}
+
+#mark-as-sold-btn {
+  border: transparent;
+  padding: 14px 10px;
+  border-radius: 10px;
+  background-color: #f59e42;
+  box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+>>>>>>> b9a44b0e352cacc28cb04312cc4f8037b65ec22e
+
+//post-ad
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#postad-form {
+  font-weight: bold;
+  display: inline-block;
+  width: 500px;
+  line-height: 2em;
+  font-family: 'Montserrat', sans-serif;
+  input, select {
+    background-color: #4a82de;
+    color: white;
+  }
+}
+
+#post-ad-submit {
+  border: transparent;
+  border: solid #4a82de 2px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+}
+#post-ad-submit:hover {
+  background-color: #4a82de;
+  color: white;
+}
+
+.post-ad-page {
+  border: transparent;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 18px;
+  padding-top: 38px;
+  padding-bottom: 38px;
+  padding-top: 58px;
+  padding-bottom: 58px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: auto;
+  background-color: #4a82de;
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+}
+
+//Messages
+
+#conversations {
+  border: transparent 1px;
+  background-color: white;
+  border-radius: 20px;
+  height: 300px;
+  width: 400px;
+  padding-left: 15px;
+  padding-right: 8px;
+  box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+  p {
+    padding-top: 12px;
+    padding-left: 8px;
+  }
+  p:hover {
+    transform: translateY(-1px) scale(1.02);
+  }
+}
+
+.conversations-box {
+  display: grid;
+  justify-content: center;
+  gap: 1em;
+  input {
+    border: transparent;
+    padding: 3px 10px;
+    border-radius: 10px;
+    padding-right: 220px;
+    height: 50px;
+    box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+  }
+  button {
+    background-color: #4a82de;
+    border: transparent;
+    padding: 3px 10px;
+    border-radius: 10px;
+    width: 75px;
+    justify-content: center;
+    box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+  }
 }

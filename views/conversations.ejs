@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Messages</title>
+    <title>Conversations</title>
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -13,11 +13,12 @@
 
   <body>
     <%- include('partials/_header') %>
-    <h1 style="padding-top: 130px; display: flex; justify-content: center;">Messages</h1>
-    <div class="messages-box">
-      <p></p>
-      <input type="text" name="image" id="message-input"></input>
-      <button type="submit" value="submit" id="send-message">Send</button>
+    <h1 style="padding-top: 130px; display: flex; justify-content: center;">Conversations</h1>
+    <div class="conversations-box">
+      <div id="conversations">
+        <p>Content goes here</p>
+        <p>And here</p>
+      </div>
     </div>
   </body>
 </html>

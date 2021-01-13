@@ -17,12 +17,6 @@ const dbParams = require('./lib/db.js');
 const db = new Pool(dbParams);
 db.connect();
 
-//Cookies
-// const cookieSession = require("cookie-session");
-// app.use(cookieSession({
-//   name: 'session',
-//   keys: ['key1', 'key2']
-// }));
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -50,6 +44,9 @@ const widgetsRoutes = require("./routes/widgets");
 const itemRoutes = require("./routes/item");
 const loginRoutes = require("./routes/login");
 const postad = require("./routes/postad");
+const search = require("./routes/search");
+const conversations = require("./routes/conversations")
+const messages = require("./routes/messages")
 const favourites = require("./routes/favourites");
 
 
@@ -60,6 +57,9 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/item", itemRoutes(db));
 app.use("/", loginRoutes(db));
 app.use("/", postad(db));
+app.use("/", search(db));
+app.use("/", conversations(db));
+app.use("/", messages(db));
 app.use("/", favourites(db));
 // Note: mount other resources here, using the same pattern above
 
