@@ -268,7 +268,9 @@ h1 {
 
 #postad-form {
   font-weight: bold;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 500px;
   line-height: 2em;
   font-family: 'Montserrat', sans-serif;
