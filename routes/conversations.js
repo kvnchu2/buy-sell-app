@@ -4,15 +4,44 @@ const router  = express.Router();
 module.exports = (db) => {
   router.get("/conversations", (req, res) => {
 
-    const sql = "SELECT * FROM conversations WHERE from_user = $1";
-    const params = [req.session.user_id]
-    db.query(sql, params)
+    const sql1 = 'SELECT conversations.*, items.* FROM conversations JOIN items ON items.id = conversations.item_id WHERE from_user = $1';
+    const params1 = [req.session.user_id]
+
+    db.query(sql1, params1)
     .then(data => {
-      const templateVars = { convos: data.rows }
-      console.log("convos", templateVars.convos)
-      res.render("conversations", templateVars);
+
+      const templateVars = { buy_conversations: data.rows }
+      console.log("convos", templateVars.buy_conversations)
+
+      const sql2 = 'SELECT conversations.*, items.* FROM conversations JOIN items ON items.id = conversations.item_id WHERE seller_id = $1';
+      const params2 = [req.session.user_id];
+
+      db.query(sql2, params2)
+      .then(data => {
+
+        templateVars.sell_conversations = data.rows;
+        res.render("conversations", templateVars);
+
+      })
+
     })
 
   });
+
+  router.post("/conversations", (req, res) => {
+
+    const sql1 = "INSERT INTO conversations (from_user, item_id) VALUES ($1, $2) RETURNING id";
+    const params1 = [req.session.user_id, req.body.item_id];
+
+    db.query(sql1, params1)
+    .then(data => {
+
+      const conversation_id = data.rows[0]
+      res.redirect(`/conversations/${conversation_id}`)
+
+    })
+
+  })
+
   return router;
 };
