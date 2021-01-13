@@ -108,7 +108,6 @@ a.button {
     font-size: 25px;
   }
   i:hover {
-    color: #f23a3a;
     transform: translateY(-1px) scale(1.2);
   }
   header {
@@ -135,6 +134,9 @@ a.button {
     padding-top: 122px;
     font-size: 16px;
   }
+  .fas:hover {
+    color: #f23a3a;
+  }
 };
 
 .item:hover {
@@ -142,9 +144,6 @@ a.button {
   transform: translateY(-3px) scale(1.06);
 }
 
-fa-heart {
-  box-shadow: rgba(254, 0, 0, 0.6) 0px 1em 1.175em;
-}
 
 #item-header {
   font-size: 15px;
@@ -154,6 +153,7 @@ fa-heart {
   align-items: center;
   padding-bottom: 0;
 }
+
 
 // Item Page
 
@@ -268,9 +268,7 @@ h1 {
 
 #postad-form {
   font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: inline-block;
   width: 500px;
   line-height: 2em;
   font-family: 'Montserrat', sans-serif;
@@ -281,6 +279,7 @@ h1 {
 }
 
 #post-ad-submit {
+  border: transparent;
   border: solid #4a82de 2px;
   padding: 3px 10px;
   border-radius: 10px;
@@ -297,12 +296,15 @@ h1 {
   margin-left: 100px;
   margin-right: 100px;
   border-radius: 18px;
+  padding-top: 38px;
+  padding-bottom: 38px;
   padding-top: 58px;
   padding-bottom: 58px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: auto;
+  background-color: #4a82de;
   background-color: white;
   font-family: 'Montserrat', sans-serif;
   box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
