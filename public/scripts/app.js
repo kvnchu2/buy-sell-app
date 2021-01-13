@@ -17,7 +17,7 @@ $(() => {
     $(evt.target).data('id', "fas-fa-heart")
     $.post("/favourites", {itemId: $(evt.target).data("item")})
       .done(() => {
-        console.log('done');
+        console.log('done');S
       })
     } else {
       // evt.stopPropagation();
@@ -34,13 +34,3 @@ $(() => {
 
 });
 
-<<<<<<< HEAD
-//
-
-// const messageBtn = $('#message-seller');
-
-// messageBtn.on('click', (req, res) => {
-//   res.render('/conversations');
-// });
-=======
->>>>>>> b9a44b0e352cacc28cb04312cc4f8037b65ec22e
