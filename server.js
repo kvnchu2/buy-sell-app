@@ -17,12 +17,6 @@ const dbParams = require('./lib/db.js');
 const db = new Pool(dbParams);
 db.connect();
 
-//Cookies
-// const cookieSession = require("cookie-session");
-// app.use(cookieSession({
-//   name: 'session',
-//   keys: ['key1', 'key2']
-// }));
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -53,6 +47,7 @@ const postad = require("./routes/postad");
 const search = require("./routes/search");
 const conversations = require("./routes/conversations")
 const messages = require("./routes/messages")
+const favourites = require("./routes/favourites");
 
 
 // Mount all resource routes
@@ -65,6 +60,7 @@ app.use("/", postad(db));
 app.use("/", search(db));
 app.use("/", conversations(db));
 app.use("/", messages(db));
+app.use("/", favourites(db));
 // Note: mount other resources here, using the same pattern above
 
 
@@ -72,14 +68,20 @@ app.use("/", messages(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 const sqlQuery = "SELECT * FROM items;";
+const favsQuery = "SELECT * FROM favourites WHERE user_id = $1;"
 
 app.get("/", (req, res) => {
   db.query(sqlQuery)
   .then(data => {
     const templateVars = { items: data.rows }
-    res.render("index", templateVars);
+    db.query(favsQuery, [req.session.user_id])
+    .then(data => {
+      templateVars.favourites = data.rows;
+      res.render("index", templateVars);
+    })
+
   })
-});
+})
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
