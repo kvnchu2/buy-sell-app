@@ -14,6 +14,7 @@
   </head>
   <body>
     <%- include('partials/_header') %>
+    <div class="greeting"><p style="padding-top: 120px;">What's hot right now</p></div>
     <div class="item-grid">
     <% const favouritesID = []; %>
     <% favourites.forEach(x => favouritesID.push(x['item_id'])); %>
@@ -23,12 +24,25 @@
       <%  if (typeof s !== 'string') return '' %>
       <%  return s.charAt(0).toUpperCase() + s.slice(1) %>
       <% }   %>
-      <div class="item">
-        <a href="http://localhost:8080/item/<%=item.id%>"><header><img src="<%= item.image_url %>" /><p style="font-weight: bold;"><%= capitalize(item.name) %></p></header><hr style="font-size: 1px; opacity: 0.5; color: #008B8B;"><footer><p style="font-weight: bold; font-size: large;"><%= ("$" + item.price / 100) %></p><i class="fas fa-heart" data-item="<%= item.id %>"></i></footer></a></div>
+      <script>
+        function changeIcon(id) {
+          event.stopPropagation();
+          document.getElementById(id).innerHTML = '<i class="fas fa-heart" data-item="<%= item.id %>"></i>'
+        }
+
+    </script>
+      <div class="item" style="background-image: url('<%= item.image_url %>')">
+        <a href="http://localhost:8080/item/<%=item.id%>"><header><p style="font-weight: bold; font-size: large"><%= ("$" + item.price / 100) %></p><a onclick="changeIcon('<%= item.id %>')" id="<%= item.id %>"><i class="far fa-heart" data-item="<%= item.id %>"></i></a></header><footer><p style="font-weight: bold;"><%= capitalize(item.name) %></p></footer></a>
+      </div>
     <% } else { %>
-      <div class="item">
-        <a href="http://localhost:8080/item/<%=item.id%>"><header><img src="<%= item.image_url %>" /><p style="font-weight: bold;"><%= capitalize(item.name) %></p></header><hr style="font-size: 1px; opacity: 0.5; color: #008B8B;"><footer><p style="font-weight: bold; font-size: large;"><%= ("$" + item.price / 100) %></p><i class="fas fa-heart" data-item="<%= item.id %>"></i></footer></a></div>
-    <% }%>
+      <% const capitalize = (s) => { %>
+      <%  if (typeof s !== 'string') return '' %>
+      <%  return s.charAt(0).toUpperCase() + s.slice(1) %>
+      <% }   %>
+      <div class="item" style="background-image: url('<%= item.image_url %>')">
+        <a href="http://localhost:8080/item/<%=item.id%>"><header><p style="font-weight: bold; font-size: large"><%= ("$" + item.price / 100) %></p><i class="fas fa-heart" data-item="<%= item.id %>"></i></header><footer><p style="font-weight: bold;"><%= capitalize(item.name) %></p></footer></a>
+      </div>
+    <% } }%>
     </div>
   </body>
 </html>

@@ -12,10 +12,12 @@ $(() => {
     evt.stopPropagation();
     evt.preventDefault();
     console.log('click')
+    $(evt.target).removeClass("far fa-heart").addClass("fas fa-heart")
     $.post("/favourites", {itemId: $(evt.target).data("item")})
       .done(() => {
         console.log('done');
       })
   })
+
 });
 
