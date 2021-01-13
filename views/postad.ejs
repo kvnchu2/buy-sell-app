@@ -14,14 +14,11 @@
 
   <body>
     <%- include('partials/_header') %>
-    <h1 style="padding-top: 130px; display: flex; justify-content: center;">Post an Ad</h1>
-    <div class="post-ad-page">
     <div id="postad-form">
       <form method="POST" action="/postad">
-        <label>Title:</label>
-        <input type="text" name="name" id="nav-input"></input>
-        <p style="line-height: 0.1em;">&nbsp;</p>
-        <label>&nbsp;Category:</label>
+        <label>Name</label>
+        <input type="text" name="name" ></input>
+        <label>Categories</label>
         <select id = "categories-dropdown" placeholder="categories" name="categories">
           <option value="" disabled selected>Categories</option>
           <option value = "1">Cars</option>
@@ -37,18 +34,14 @@
           <option value = "11">Sporting Goods</option>
           <option value = "12">Books</option>
         </select>
-        <p style="line-height: 0.1em;">&nbsp;</p>
-        <label>Price:</label>
-        <input type="number" name="price" id="nav-input"></input>
-        <p style="line-height: 0.1em;">&nbsp;</p>
-        <label>Description:</label>
-        <input type="text" name="description" id="nav-input"></input>
-        <p style="line-height: 0.1em;">&nbsp;</p>
-        <label>Image URL:</label>
-        <input type="text" name="image" id="nav-input"></input>
-        <button type="submit" value="submit" id="post-ad-submit">Submit</button>
+        <label>Price</label>
+        <input type="number" name="price"></input>
+        <label>Description</label>
+        <input type="text" name="description"></input>
+        <label>Image URL</label>
+        <input type="text" name="image"></input>
+        <button type="submit" value="submit">Submit</button>
       </form>
-    </div>
     </div>
   </body>
 </html>
