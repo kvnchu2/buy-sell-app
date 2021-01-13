@@ -35,7 +35,7 @@
     <% if (parseInt(user_id, 10) === parseInt(item.seller_id, 10)) { %>
       <div id="mark-as-sold">
         <form action='sold/<%=item.id%>' method="POST">
-          <button>Mark as sold</button>
+          <button id="mark-as-sold-btn">Mark as sold</button>
         </form>
       </div>
     <% } else { %>

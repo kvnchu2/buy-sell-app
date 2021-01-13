@@ -79,7 +79,7 @@ a.button {
 }
 .item-grid{
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   grid-template-columns: repeat(3, minmax(320px, 320px));
   grid-auto-rows: 258px;
   padding: 68px 68px;
@@ -88,23 +88,17 @@ a.button {
 }
 
 .item {
-  padding: 15px 15px;
+  padding: 1px 10px;
   border: transparent;
   border-width: 2px;
   padding-top: 1px;
   padding-bottom: 10px;
   border-radius: 7px;
   background-color: white;
-  background-size: 100% 77%;
+  background-size: 100% 70%;
   background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
   box-shadow: rgba(2, 8, 20, 0.3) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
-
-  // img {
-  //   height: 150px;
-  //   border-radius: 22px;
-  //   max-width: 320px;
-  // }
   a {
     text-decoration: none;
     color: black;
@@ -115,7 +109,7 @@ a.button {
   }
   i:hover {
     color: #f23a3a;
-    transform: translateY(-1px) scale(1.03);
+    transform: translateY(-1px) scale(1.2);
   }
   header {
     font-size: 18px;
@@ -145,7 +139,7 @@ a.button {
 
 .item:hover {
   box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.195em 1em;
-  transform: translateY(-3px) scale(1.02);
+  transform: translateY(-3px) scale(1.06);
 }
 
 fa-heart {
@@ -188,7 +182,7 @@ fa-heart {
     max-height: 250px;
     border-radius: 5px;
     max-width: 45em;
-    box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+    box-shadow: rgba(2, 8, 20, 0.4) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
   }
   #price-and-description {
     display: flex;
@@ -238,10 +232,32 @@ fa-heart {
   background-color: #f59e42;
   font-weight: bold;
   font-size: 20px;
-  box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+  box-shadow: rgba(2, 8, 20, 0.4) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
 }
 #message-seller:hover {
   transform: translateY(-1px) scale(1.02);
+}
+
+#mark-as-sold {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#mark-as-sold-btn:hover {
+  transform: translateY(-1px) scale(1.02);
+}
+
+#mark-as-sold-btn {
+  border: transparent;
+  padding: 14px 10px;
+  border-radius: 10px;
+  background-color: #f59e42;
+  box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
 
 
@@ -251,17 +267,27 @@ h1 {
 }
 
 #postad-form {
+  font-weight: bold;
   display: inline-block;
   width: 500px;
   line-height: 2em;
   font-family: 'Montserrat', sans-serif;
+  input, select {
+    background-color: #4a82de;
+    color: white;
+  }
 }
 
 #post-ad-submit {
-  border: transparent;
+  border: solid #4a82de 2px;
   padding: 3px 10px;
   border-radius: 10px;
   font-family: 'Montserrat', sans-serif;
+  background-color: white;
+}
+#post-ad-submit:hover {
+  background-color: #4a82de;
+  color: white;
 }
 
 .post-ad-page {
@@ -269,13 +295,58 @@ h1 {
   margin-left: 100px;
   margin-right: 100px;
   border-radius: 18px;
-  padding-top: 38px;
-  padding-bottom: 38px;
+  padding-top: 58px;
+  padding-bottom: 58px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: auto;
-  background-color: #4a82de;
+  background-color: white;
   font-family: 'Montserrat', sans-serif;
   box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
 }
+
+//Messages
+
+#conversations {
+  border: transparent 1px;
+  background-color: white;
+  border-radius: 20px;
+  height: 300px;
+  width: 400px;
+  padding-left: 15px;
+  padding-right: 8px;
+  box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+  p {
+    padding-top: 12px;
+    padding-left: 8px;
+  }
+  p:hover {
+    transform: translateY(-1px) scale(1.02);
+  }
+}
+
+.conversations-box {
+  display: grid;
+  justify-content: center;
+  gap: 1em;
+  input {
+    border: transparent;
+    padding: 3px 10px;
+    border-radius: 10px;
+    padding-right: 220px;
+    height: 50px;
+    box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+  }
+  button {
+    background-color: #4a82de;
+    border: transparent;
+    padding: 3px 10px;
+    border-radius: 10px;
+    width: 75px;
+    justify-content: center;
+    box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+  }
+}
+
+

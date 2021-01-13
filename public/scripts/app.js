@@ -8,3 +8,11 @@ $(() => {
     }
   });;
 });
+
+//
+
+// const messageBtn = $('#message-seller');
+
+// messageBtn.on('click', (req, res) => {
+//   res.render('/conversations');
+// });
