@@ -8,7 +8,7 @@
     </div>
     <div id="search-form">
     <form method="POST" action="/search">
-      <input type="text" name="item-name" id="nav-input"></input>
+      <input type="text" name="item-name" id="nav-input" placeholder="Search"></input>
       <select id = "categories-dropdown" placeholder="categories" name="categories">
         <option value="" disabled selected>Categories</option>
         <option value = "1">Cars</option>
@@ -27,8 +27,7 @@
       <button type="search" value="Search" class="btn btn-outline-dark">Search</button>
     </form>
     </div>
-    <a href="http://localhost:8080/postad" class="button" style="padding-right: 23px;"><button>Post Ad</button></a>
-
+    <a href="http://localhost:8080/postad" class="button" style="padding-right: 23px;"><button id="post-ad-nav">Post Ad</button></a>
   </container>
   </nav>
 </header>

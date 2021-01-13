@@ -21,7 +21,7 @@
       }   %>
       <div id="title-and-date">
         <h1 id="item-title" style="padding-top: 14px;"> <%= capitalize(item.name) %></h1>
-        <p style="font-size: 28px;"> $<%= (item.price)/100 %> </p>
+        <p style="font-size: 28px; color: black;"> $<%= (item.price)/100 %> </p>
       </div>
       <div id="price-and-description">
         <p style="line-height: 0.1em; font-weight: bold;"> <%= capitalize(item.description) %></p>
@@ -40,9 +40,7 @@
       </div>
     <% } else { %>
       <div id="message-box" style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
-        <label for="message" style="font-weight: bold;">Message Seller:</label>
-        <input class="form-control" type="text" name="message" style="width: 300px; margin: 1em">
-        <button type="submit" class="btn btn-primary">Send</button>
+        <button type="submit" id="message-seller">Message Seller</button>
       </div>
       <p style="display: flex; justify-content: center;">Posted: <%= item.date_posted.toString().slice(0,15) %></p>
     <% } %>

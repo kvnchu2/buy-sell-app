@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,600;1,200&display=swap');
 
 body {
-  background-color: #dbdfdf;
+  background-color: #edf2f2;
 
   h1 {
     color: black;
@@ -18,7 +18,7 @@ body {
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #4669a7;
+  background-color: #4a82de;
   height: 100px;
   position: fixed;
   top: 0;
@@ -34,22 +34,28 @@ body {
   padding-right: 25px;
 };
 
+#post-ad-nav {
+  border: transparent;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+
+#post-ad-nav:hover {
+  transform: translateY(-1px) scale(1.02);
+}
+
 .btn-outline-dark {
-  border: solid #20381f;
+  border: transparent;
   padding: 3px 10px;
   border-radius: 10px;
 }
 .btn-outline-dark:hover {
-  background-color: #f59e42;
   transform: translateY(-1px) scale(1.02);
 }
 #nav-input, #categories-dropdown {
-  border: solid #20381f;
+  border: transparent;
   padding: 3px 10px;
   border-radius: 10px;
-}
-#nav-input:hover, #categories-dropdown:hover {
-  background-color: #f59e42;
 }
 
 a.button {
@@ -89,10 +95,10 @@ a.button {
   padding-bottom: 10px;
   border-radius: 7px;
   background-color: white;
-  box-shadow:rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
   background-size: 100% 77%;
   background-repeat: no-repeat;
   font-family: 'Montserrat', sans-serif;
+  box-shadow: rgba(2, 8, 20, 0.3) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
 
   // img {
   //   height: 150px;
@@ -177,10 +183,12 @@ fa-heart {
   background-color: white;
   box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.195em 1em;
   width: 50em;
+  color: black;
   img {
     max-height: 250px;
     border-radius: 5px;
     max-width: 45em;
+    box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
   }
   #price-and-description {
     display: flex;
@@ -191,6 +199,7 @@ fa-heart {
     padding-left: 20px;
     padding: 20px 18px;
     background-color: white;
+    color: black;
   }
   #title-and-date {
     display: flex;
@@ -201,16 +210,7 @@ fa-heart {
     color: #20381f;
     font-size: 14px;
   }
-  .fas:hover {
-    background-color: #f59e42;
-    transform: translateY(-1px) scale(1.03);
-  }
-  .fas {
-    border: solid #20381f;
-    padding: 10px 10px;
-    border-radius: 10px;
-    background-color: #bbc4c4;
-  }
+
 }
 .btn-primary {
   border: solid #20381f;
@@ -231,6 +231,20 @@ fa-heart {
   background-color: #f59e42;
 }
 
+#message-seller {
+  border: transparent;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background-color: #f59e42;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+}
+#message-seller:hover {
+  transform: translateY(-1px) scale(1.02);
+}
+
+
 //post-ad
 h1 {
   font-family: 'Montserrat', sans-serif;
@@ -244,24 +258,24 @@ h1 {
 }
 
 #post-ad-submit {
-  border: solid #20381f;
+  border: transparent;
   padding: 3px 10px;
   border-radius: 10px;
   font-family: 'Montserrat', sans-serif;
 }
 
 .post-ad-page {
-  border: solid black;
+  border: transparent;
   margin-left: 100px;
   margin-right: 100px;
   border-radius: 18px;
-  padding-top: 18px;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  padding-top: 38px;
+  padding-bottom: 38px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: auto;
-  background-color: #f59e42;
+  background-color: #4a82de;
   font-family: 'Montserrat', sans-serif;
+  box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
 }
