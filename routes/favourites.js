@@ -29,5 +29,20 @@ module.exports = (db) => {
     });
   });
 
+  router.post("/favourites/delete", (req, res) => {
+    const item_id = req.body.itemId;
+    const userID = req.session.user_id;
+    const sql = `DELETE FROM favourites WHERE user_id = $1 AND item_id = $2 RETURNING *;`
+    db.query(sql, [userID, item_id])
+    .then(data => {
+      res.redirect("/")
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+  });
+
   return router;
 };
