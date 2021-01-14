@@ -20,13 +20,13 @@
         <div id="buys">
           <h1>buy conversations</h1>
           <% for (let buy of buy_conversations) { %>
-            <p> <%= buy.name %> </p>
+            <a href="/conversations/<%=buy.id%>"> <%= buy.name %> </a>
           <% } %>
         </div>
         <div id="sells">
           <h1>sell conversations</h1>
           <% for (let sell of sell_conversations) { %>
-            <p> <%= sell.name %> </p>
+            <a href="/conversations/<%=sell.id%>"> <%= sell.name %> </a>
           <% } %>
         </div>
       </div>

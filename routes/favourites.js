@@ -20,9 +20,9 @@ module.exports = (db) => {
     console.log("userID: ", userID)
     const sql = `INSERT INTO favourites (user_id, item_id) VALUES ($1, $2) RETURNING *;`
     db.query(sql, [userID, item_id])
-    .then(data => {
-      res.redirect("/")
-    })
+    // .then(data => {
+    //   res.redirect("/")
+    // })
     .catch(err => {
       res
         .status(500)
@@ -35,9 +35,9 @@ module.exports = (db) => {
     const userID = req.session.user_id;
     const sql = `DELETE FROM favourites WHERE user_id = $1 AND item_id = $2 RETURNING *;`
     db.query(sql, [userID, item_id])
-    .then(data => {
-      res.redirect("/")
-    })
+    // .then(data => {
+    //   res.redirect("/")
+    // })
     .catch(err => {
       res
         .status(500)

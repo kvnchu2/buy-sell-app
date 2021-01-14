@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Item Page</title>
+    <title>Home Page</title>
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script defer type="text/javascript" src="/scripts/app.js"></script>
     <script src="https://kit.fontawesome.com/77de315972.js" crossorigin="anonymous"></script>
+
   </head>
   <body>
     <%- include('partials/_header') %>
-    <div class="item-page-body">
-    <div id="item-box">
-      <% const capitalize = (s) => {
-        if (typeof s !== 'string') return ''
-        return s.charAt(0).toUpperCase() + s.slice(1)
-      }   %>
-      <div id="title-and-date">
-        <h1 id="item-title" style="padding-top: 14px;"> <%= capitalize(item.name) %></h1>
-        <p style="font-size: 28px; color: black;"> $<%= (item.price)/100 %> </p>
-      </div>
-      <div id="price-and-description">
-        <p style="line-height: 0.1em; font-weight: bold;"> <%= capitalize(item.description) %></p>
-      </div>
-
-      <div style="display: flex; justify-content: center;">
-        <img id="item-image" style="text-align: center;" src= <%= item.image_url %>
-      </div>
+    <div class="greeting">
+      <p style="padding-top: 120px;">Hot deals right now 🔥</p>
     </div>
-    <% console.log(user_id, item.seller_id) %>
-    <% if (parseInt(user_id, 10) === parseInt(item.seller_id, 10)) { %>
-      <div id="mark-as-sold">
-        <form action='sold/<%=item.id%>' method="POST">
-          <button id="mark-as-sold-btn">Mark as sold</button>
-        </form>
+    <div class="item-grid">
+    <% const favouritesID = []; %>
+    <% const capitalize = (s) => { %>
+      <%  if (typeof s !== 'string') return '' %>
+      <%  return s.charAt(0).toUpperCase() + s.slice(1) %>
+    <% }   %>
+    <% favourites.forEach(x => favouritesID.push(x['item_id'])); %>
+    <% for (let item of items) { %>
+      <div class="item" style="background-image: url('<%= item.image_url %>')">
+        <a href="http://localhost:8080/item/<%=item.id%>">
+          <header>
+            <p style="font-weight: bold; font-size: large">
+              <%= ("$" + item.price / 100) %>
+            </p>
+            <% if (!item.is_sold && favouritesID.indexOf(item.id) === -1) { %>
+              <i class="far fa-heart" data-item="<%= item.id %>" data-id="far-fa-heart" id="fas-fa-heart"></i>
+            <% } else { %>
+              <i class="fas fa-heart" data-item="<%= item.id %>" data-id="fas-fa-heart" id="fas-fa-heart"></i>
+            <% } %>
+          </header>
+          <footer>
+            <p style="font-weight: bold;">
+              <%= capitalize(item.name) %>
+            </p>
+          </footer>
+        </a>
       </div>
-    <% } else { %>
-      <div id="message-box" style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
-        <form method="POST" action="/conversations">
-          <button type="submit" id="message-seller">Message Seller</button>
-          <input type="hidden" name="item_id" value="<%= item.id %>">
-        </form>
-      </div>
-      <p style="display: flex; justify-content: center;">Posted: <%= item.date_posted.toString().slice(0,15) %></p>
     <% } %>
-  </div>
+    </div>
   </body>
 </html>
 

@@ -372,8 +372,8 @@ h1 {
   border: transparent 1px;
   background-color: white;
   border-radius: 20px;
-  height: 300px;
-  width: 400px;
+  height: 450px;
+  width: 450px;
   padding-left: 15px;
   padding-right: 8px;
   box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
@@ -390,16 +390,49 @@ h1 {
   display: grid;
   justify-content: center;
   gap: 1em;
-  input {
+  p {
+    border: solid black;
+    padding: 7px;
+    border-radius: 15px;
+    box-shadow: rgba(2, 8, 20, 0.2) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+  }
+}
+
+//Messages
+
+.messages-box {
+  border: solid black;
+  background-color: white;
+  display: flex;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  margin-left: 45px;
+  margin-right: 45px;
+  p {
     border: transparent;
+    padding: 12px 12px;
+    border-radius: 25px;
+    box-shadow: rgba(2, 8, 20, 0.3) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+  }
+}
+
+#message-buyer-seller {
+  input {
+    border: solid black;
     padding: 3px 10px;
     border-radius: 10px;
     padding-right: 220px;
     height: 50px;
-    box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
+    box-shadow: rgba(2, 8, 20, 0.3) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
   }
   button {
     background-color: #4a82de;
+    color: white;
     border: transparent;
     padding: 3px 10px;
     border-radius: 10px;
