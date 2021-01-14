@@ -28,8 +28,9 @@ module.exports = (db) => {
     db.query(sql1, params1)
     .then(data => {
 
-      const buyer_id = data.rows[0];
+      const buyer_id = data.rows[0].from_user;
       let from_buyer = false
+      console.log(sender_id, buyer_id);
 
       if (parseInt(sender_id, 10) === parseInt(buyer_id, 10)) {
         from_buyer = true;
