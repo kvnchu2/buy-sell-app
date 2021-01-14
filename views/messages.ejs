@@ -15,7 +15,18 @@
     <%- include('partials/_header') %>
     <h1 style="padding-top: 130px; display: flex; justify-content: center;">Messages</h1>
     <div class="messages-box">
-      <p></p>
+      <h1>messages</h1>
+      <% for (let message of messages) { %>
+        <% if (from_buyer) { %>
+          <p id="from-buyer">
+            <%= message.content %>
+          </p>
+        <% } else { %>
+          <p id="from-seller" >
+            <%= message.content %>
+          </p>
+        <% } %>
+      <% } %>
       <input type="text" name="image" id="message-input"></input>
       <button type="submit" value="submit" id="send-message">Send</button>
     </div>
