@@ -108,10 +108,6 @@ a.button {
     font-size: 25px;
   }
   i:hover {
-<<<<<<< HEAD
-    color: #f23a3a;
-=======
->>>>>>> b9a44b0e352cacc28cb04312cc4f8037b65ec22e
     transform: translateY(-1px) scale(1.2);
   }
   header {
@@ -137,12 +133,9 @@ a.button {
     flex-wrap: wrap;
     padding-top: 122px;
     font-size: 16px;
-<<<<<<< HEAD
-=======
   }
   .fas:hover {
     color: #f23a3a;
->>>>>>> b9a44b0e352cacc28cb04312cc4f8037b65ec22e
   }
 };
 
@@ -151,18 +144,11 @@ a.button {
   transform: translateY(-3px) scale(1.06);
 }
 
-<<<<<<< HEAD
-fa-heart {
-  box-shadow: rgba(254, 0, 0, 0.6) 0px 1em 1.175em;
-}
-
-=======
 
 #fas-fa-heart {
   color: red;
 }
 
->>>>>>> b9a44b0e352cacc28cb04312cc4f8037b65ec22e
 #item-header {
   font-size: 15px;
   font-weight: bold;
@@ -241,7 +227,6 @@ fa-heart {
 }
 .form-control:hover {
   background-color: #f59e42;
-<<<<<<< HEAD
 }
 
 #message-seller {
@@ -279,136 +264,6 @@ fa-heart {
   padding-bottom: 15px;
 }
 
-
-//post-ad
-h1 {
-  font-family: 'Montserrat', sans-serif;
-}
-
-#postad-form {
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 500px;
-  line-height: 2em;
-  font-family: 'Montserrat', sans-serif;
-  input, select {
-    background-color: #4a82de;
-    color: white;
-  }
-}
-
-#post-ad-submit {
-  border: solid #4a82de 2px;
-  padding: 3px 10px;
-  border-radius: 10px;
-  font-family: 'Montserrat', sans-serif;
-  background-color: white;
-}
-#post-ad-submit:hover {
-  background-color: #4a82de;
-  color: white;
-}
-
-.post-ad-page {
-  border: transparent;
-  margin-left: 100px;
-  margin-right: 100px;
-  border-radius: 18px;
-  padding-top: 58px;
-  padding-bottom: 58px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: auto;
-  background-color: white;
-  font-family: 'Montserrat', sans-serif;
-  box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
-}
-
-//Messages
-
-#conversations {
-  border: transparent 1px;
-  background-color: white;
-  border-radius: 20px;
-  height: 300px;
-  width: 400px;
-  padding-left: 15px;
-  padding-right: 8px;
-  box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
-  p {
-    padding-top: 12px;
-    padding-left: 8px;
-  }
-  p:hover {
-    transform: translateY(-1px) scale(1.02);
-  }
-}
-
-.conversations-box {
-  display: grid;
-  justify-content: center;
-  gap: 1em;
-  input {
-    border: transparent;
-    padding: 3px 10px;
-    border-radius: 10px;
-    padding-right: 220px;
-    height: 50px;
-    box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
-  }
-  button {
-    background-color: #4a82de;
-    border: transparent;
-    padding: 3px 10px;
-    border-radius: 10px;
-    width: 75px;
-    justify-content: center;
-    box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
-  }
-}
-
-=======
-}
-
-#message-seller {
-  border: transparent;
-  padding: 3px 10px;
-  border-radius: 10px;
-  background-color: #f59e42;
-  font-weight: bold;
-  font-size: 20px;
-  box-shadow: rgba(2, 8, 20, 0.4) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
-}
-#message-seller:hover {
-  transform: translateY(-1px) scale(1.02);
-}
-
-#mark-as-sold {
-  display: flex;
-  justify-content: center;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-#mark-as-sold-btn:hover {
-  transform: translateY(-1px) scale(1.02);
-}
-
-#mark-as-sold-btn {
-  border: transparent;
-  padding: 14px 10px;
-  border-radius: 10px;
-  background-color: #f59e42;
-  box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
-  font-weight: bold;
-  font-size: 20px;
-  padding-top: 10px;
-  padding-bottom: 15px;
-}
-
->>>>>>> b9a44b0e352cacc28cb04312cc4f8037b65ec22e
 
 //post-ad
 h1 {
@@ -500,4 +355,64 @@ h1 {
     justify-content: center;
     box-shadow: rgba(2, 8, 20, 0.6) 0px 1em 1.175em, rgba(2, 8, 20, 0.1) 0px 0.295em 1em;
   }
+}
+
+
+//search
+
+.search {
+  display:flex;
+  flex-direction: row;
+}
+
+#filter-form {
+  font-weight: bold;
+  display: inline-block;
+  line-height: 2em;
+  font-family: 'Montserrat', sans-serif;
+  input, select {
+    background-color: #4a82de;
+    color: white;
+  }
+  padding-left: 50px;
+  display:flex;
+  flex-direction: column;
+  margin-top: 250px;
+}
+
+.item-grid-search {
+  padding-top: 400px;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(260px, 220px));
+  grid-auto-rows: 258px;
+  padding: 68px 68px;
+  justify-content: flex-start;
+  margin-top: 200px;
+}
+
+
+#search-submit {
+  border: transparent;
+  border: solid #4a82de 2px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+}
+
+#search-submit:hover {
+  background-color: #4a82de;
+  color: white;
+}
+
+#min-price {
+  padding-bottom: 3px;
+  border-radius: 10px;
+}
+
+#max-price {
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }

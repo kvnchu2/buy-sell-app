@@ -3,10 +3,10 @@ const router  = express.Router();
 
 module.exports = (db) => {
 
-  const sqlQuery = "SELECT * FROM favourites JOIN items ON item_id = items.id WHERE favourites.id IN (SELECT favourites.id FROM favourites);";
-
   router.get("/favourites", (req, res) => {
-    db.query(sqlQuery)
+    const sqlQuery = "SELECT *, items.* FROM favourites JOIN items ON item_id = items.id WHERE user_id = $1;";
+    const params = req.session.user_id;
+    db.query(sqlQuery, params)
     .then(data => {
       const templateVars = { items: data.rows }
       res.render("favourites", templateVars);
