@@ -14,9 +14,12 @@
   </head>
   <body>
     <%- include('partials/_header') %>
-    <div class="greeting"><p style="padding-top: 120px;">Hot deals right now 🔥</p></div>
+    <div class="greeting">
+      <p style="padding-top: 120px;">Hot deals right now 🔥</p>
+    </div>
     <div class="item-grid">
     <% const favouritesID = []; %>
+<<<<<<< HEAD
     <% favourites.forEach(x => favouritesID.push(x['item_id'])); %>
     <% for (let item of items) { %>
       <% if (!item.is_sold && favouritesID.indexOf(item.id) === -1) { %>
@@ -29,13 +32,38 @@
       </div>
     <% } else { %>
       <% const capitalize = (s) => { %>
+=======
+    <% const capitalize = (s) => { %>
+>>>>>>> 9cdab0b91bcf055654df2d571ec218688f274acf
       <%  if (typeof s !== 'string') return '' %>
       <%  return s.charAt(0).toUpperCase() + s.slice(1) %>
-      <% }   %>
+    <% }   %>
+    <% favourites.forEach(x => favouritesID.push(x['item_id'])); %>
+    <% for (let item of items) { %>
       <div class="item" style="background-image: url('<%= item.image_url %>')">
+<<<<<<< HEAD
         <a href="http://localhost:8080/item/<%=item.id%>"><header><p style="font-weight: bold; font-size: large"><%= ("$" + item.price / 100) %></p><i class="fas fa-heart" data-item="<%= item.id %>" data-id="fas-fa-heart" id="fas-fa-heart"></i></header><footer><p style="font-weight: bold;"><%= capitalize(item.name) %></p></footer></a>
+=======
+        <a href="http://localhost:8080/item/<%=item.id%>">
+          <header>
+            <p style="font-weight: bold; font-size: large">
+              <%= ("$" + item.price / 100) %>
+            </p>
+            <% if (!item.is_sold && favouritesID.indexOf(item.id) === -1) { %>
+              <i class="far fa-heart" data-item="<%= item.id %>" data-id="far-fa-heart" id="fas-fa-heart"></i>
+            <% } else { %>
+              <i class="fas fa-heart" data-item="<%= item.id %>" data-id="fas-fa-heart" id="fas-fa-heart"></i>
+            <% } %>
+          </header>
+          <footer>
+            <p style="font-weight: bold;">
+              <%= capitalize(item.name) %>
+            </p>
+          </footer>
+        </a>
+>>>>>>> 9cdab0b91bcf055654df2d571ec218688f274acf
       </div>
-    <% } }%>
+    <% } %>
     </div>
   </body>
 </html>

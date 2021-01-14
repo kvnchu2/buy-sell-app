@@ -55,14 +55,13 @@ const favourites = require("./routes/favourites");
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/item", itemRoutes(db));
+app.use("/favourites", favourites(db));
 app.use("/", loginRoutes(db));
 app.use("/", postad(db));
 app.use("/", search(db));
 app.use("/", conversations(db));
 app.use("/", messages(db));
-app.use("/", favourites(db));
 // Note: mount other resources here, using the same pattern above
-
 
 // Home page
 // Warning: avoid creating more routes in this file!
@@ -77,9 +76,9 @@ app.get("/", (req, res) => {
     db.query(favsQuery, [req.session.user_id])
     .then(data => {
       templateVars.favourites = data.rows;
+      console.log("favourites", templateVars.favourites);
       res.render("index", templateVars);
     })
-
   })
 })
 

@@ -24,10 +24,19 @@
         <option value = "11">Sporting Goods</option>
         <option value = "12">Books</option>
       </select>
+      <input type="hidden" name="minPrice" value=0>
+      <input type="hidden" name="maxPrice" value=2500001>
       <button type="search" value="Search" class="btn btn-outline-dark">Search</button>
     </form>
     </div>
-    <a href="http://localhost:8080/postad" class="button" style="padding-right: 23px;"><button id="post-ad-nav">Post Ad</button></a>
+    <section class="nav-icons">
+      <form action="/favourites" method="get"><a><i class="fas fa-envelope"></i></a></form>
+        <div class="circle">
+            <p>2</p>
+        </div>
+      <a href=""><i class="fas fa-star"></i></a>
+      <a href="http://localhost:8080/postad" class="button" style="padding-right: 23px;"><button id="post-ad-nav">Post Ad</button></a>
+    </section>
   </container>
   </nav>
 </header>

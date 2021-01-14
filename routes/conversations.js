@@ -32,11 +32,12 @@ module.exports = (db) => {
 
     const sql1 = "INSERT INTO conversations (from_user, item_id) VALUES ($1, $2) RETURNING id";
     const params1 = [req.session.user_id, req.body.item_id];
+    console.log(params1);
 
     db.query(sql1, params1)
     .then(data => {
-
-      const conversation_id = data.rows[0]
+      console.log(data.rows[0])
+      const conversation_id = data.rows[0].id;
       res.redirect(`/conversations/${conversation_id}`)
 
     })
