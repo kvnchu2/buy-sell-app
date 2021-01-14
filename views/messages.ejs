@@ -18,11 +18,7 @@
     <div class="messages-box">
       <h1>messages</h1>
       <% for (let message of messages) { %>
-<<<<<<< HEAD
-        <% if (from_buyer) { %>
-=======
         <% if (message.from_buyer) { %>
->>>>>>> 9cdab0b91bcf055654df2d571ec218688f274acf
           <p id="from-buyer">
             <%= message.content %>
           </p>
@@ -32,11 +28,6 @@
           </p>
         <% } %>
       <% } %>
-<<<<<<< HEAD
-      <input type="text" name="image" id="message-input"></input>
-      <button type="submit" value="submit" id="send-message">Send</button>
-=======
->>>>>>> 9cdab0b91bcf055654df2d571ec218688f274acf
     </div>
     <form method="POST" action="/<%=conversation_id%>">
       <input type="text" name="message" id="message-input"></input>
