@@ -16,8 +16,18 @@
     <h1 style="padding-top: 130px; display: flex; justify-content: center;">Conversations</h1>
     <div class="conversations-box">
       <div id="conversations">
-        <p>Content goes here</p>
-        <p>And here</p>
+        <div id="buys">
+          <h1>buy conversations</h1>
+          <% for (let buy of buy_conversations) { %>
+            <p> <%= buy.name %> </p>
+          <% } %>
+        </div>
+        <div id="sells">
+          <h1>sell conversations</h1>
+          <% for (let sell of sell_conversations) { %>
+            <p> <%= sell.name %> </p>
+          <% } %>
+        </div>
       </div>
     </div>
   </body>

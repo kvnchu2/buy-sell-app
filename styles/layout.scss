@@ -38,6 +38,7 @@ body {
   border: transparent;
   padding: 3px 10px;
   border-radius: 10px;
+  margin-right: 30px;
 }
 
 #post-ad-nav:hover {
@@ -68,6 +69,57 @@ a.button {
 .button:hover {
   color: #f59e42;
 }
+
+.nav-icons {
+  display:flex;
+  flex-direction:row;
+  justify-content: start;
+  //line-height: 2em;
+}
+
+.fa-envelope {
+  font-size: 30px;
+  color: white;
+  padding-right: 5px;
+}
+.fa-envelope:hover {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.fa-star {
+  font-size: 30px;
+  color: #E6BF00;
+  margin-right: 50px;
+}
+.fa-star:hover {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.circle{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  color: #fff;
+  margin-right: 50px;
+    p{
+      font-weight: bold;
+      display:flex;
+      flex-direction: column;
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+    }
+    p span{
+      font-weight: normal;
+      font-size: .5em
+    }
+}
+
 
 //Home page
 .greeting {
