@@ -11,6 +11,11 @@ module.exports = (db) => {
       const templateVars = { items: data.rows }
       res.render("favourites", templateVars);
     })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
   });
 
   router.post("/favourites", (req, res) => {

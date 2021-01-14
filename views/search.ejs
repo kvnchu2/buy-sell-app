@@ -13,17 +13,17 @@
   </head>
   <body>
     <%- include('partials/_header') %>
-    <container class="search">
-      <form method="GET" action="/search" id="filter-form">
+    <container class="search" style="display: flex; flex-direction: column; justify-content: center;">
+      <div style="align-items: center;"><form method="GET" action="/search" id="filter-form" style="display: flex; flex-direction: column; justify-content: center;">
         <label>Price (Excludes Taxes)</label>
-        <label>From</label>
+        <label>Min</label>
         <input type="number" name="minPrice" id="min-price"></input>
-        <label>To</label>
+        <label>Max</label>
         <input type="number" name="maxPrice" id="max-price"></input>
         <input type="hidden" name="itemName" value=<%= itemName %>>
         <input type="hidden" name="categories" value=<%= categories %>>
         <button type="submit" value="submit" id="search-submit">Filter</button>
-      </form>
+      </form></div>
       <div class="item-grid-search">
         <% for (let item of items) { %>
           <% if (!item.is_sold ) { %>
