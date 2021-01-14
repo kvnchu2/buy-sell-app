@@ -9,7 +9,7 @@ module.exports = (db) => {
     const params = [conversation_id]
     db.query(sql, params)
     .then(data => {
-      const templateVars = { messages: data.rows }
+      const templateVars = { messages: data.rows, conversation_id: conversation_id }
       console.log("msgs", templateVars.messages)
       res.render("messages", templateVars);
     })

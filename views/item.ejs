@@ -40,7 +40,10 @@
       </div>
     <% } else { %>
       <div id="message-box" style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
-        <button type="submit" id="message-seller">Message Seller</button>
+        <form method="POST" action="/conversations">
+          <button type="submit" id="message-seller">Message Seller</button>
+          <input type="hidden" name="item_id" value="<%= id %>">
+        </form>
       </div>
       <p style="display: flex; justify-content: center;">Posted: <%= item.date_posted.toString().slice(0,15) %></p>
     <% } %>
