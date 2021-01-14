@@ -16,7 +16,7 @@ module.exports = (db) => {
 
   });
 
-  router.post("/conversations/:id", (req, res) => {
+  router.post("/:id", (req, res) => {
 
     const msg = req.body.message;
     const sender_id = req.session.user_id;
@@ -28,8 +28,9 @@ module.exports = (db) => {
     db.query(sql1, params1)
     .then(data => {
 
-      const buyer_id = data.rows[0];
+      const buyer_id = data.rows[0].from_user;
       let from_buyer = false
+      console.log(sender_id, buyer_id);
 
       if (parseInt(sender_id, 10) === parseInt(buyer_id, 10)) {
         from_buyer = true;
@@ -40,7 +41,7 @@ module.exports = (db) => {
 
       db.query(sql2, params2)
       .then(data => {
-        res.redirect(`/conversations/${conversation_id}`)
+        res.redirect(`conversations/${conversation_id}`)
       })
 
     })
