@@ -16,7 +16,7 @@ module.exports = (db) => {
 
   });
 
-  router.post("/conversations/:id", (req, res) => {
+  router.post("/:id", (req, res) => {
 
     const msg = req.body.message;
     const sender_id = req.session.user_id;
@@ -40,7 +40,7 @@ module.exports = (db) => {
 
       db.query(sql2, params2)
       .then(data => {
-        res.redirect(`/conversations/${conversation_id}`)
+        res.redirect(`conversations/${conversation_id}`)
       })
 
     })
