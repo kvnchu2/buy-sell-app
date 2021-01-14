@@ -129,7 +129,7 @@ a.button {
   font-size: 22px;
   font-family: 'Montserrat', sans-serif;
 }
-.item-grid{
+.item-grid, .favourites-item-grid{
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(3, minmax(320px, 320px));
@@ -137,6 +137,10 @@ a.button {
   padding: 68px 68px;
   padding-top: 20px;
   justify-content: center;
+}
+
+.favourites-item-grid {
+  padding-top: 140px;
 }
 
 .item {
@@ -198,7 +202,7 @@ a.button {
 
 
 #fas-fa-heart {
-  color: rgba(255, 255, 255, 0.6);
+  color: red;
 }
 #fas-fa-heart:hover {
   color: red;
@@ -477,8 +481,7 @@ h1 {
 }
 .search {
   display:flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
  }
 
 
@@ -490,7 +493,7 @@ h1 {
     background-color: #4a82de;
     color: white;
   }
-  margin-left: 220px;
+  margin-left: 520px;
   width: 26em;
   display:flex;
   flex-direction: column;
