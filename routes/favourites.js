@@ -3,21 +3,22 @@ const router  = express.Router();
 
 module.exports = (db) => {
 
-  router.get("/favourites", (req, res) => {
-    const sqlQuery = "SELECT *, items.* FROM favourites JOIN items ON item_id = items.id WHERE user_id = $1;";
-    const params = req.session.user_id;
-    db.query(sqlQuery, params)
+  router.get("/", (req, res) => {
+    const sqlQuery = "SELECT * FROM favourites JOIN items ON item_id = items.id WHERE favourites.id IN (SELECT favourites.id FROM favourites);";
+    db.query(sqlQuery)
     .then(data => {
       const templateVars = { items: data.rows }
       res.render("favourites", templateVars);
     })
   });
 
-  router.post("/favourites", (req, res) => {
-    console.log('hello');
-    const item_id = req.body.itemId;
+  router.post("/", (req, res) => {
+    console.log(req.body);
+    const item_id = req.body.item_Id;
     const userID = req.session.user_id;
-    const sql = `INSERT INTO favourites(user_id, item_id) VALUES ($1, $2) RETURNING *;`
+    console.log("ItemID: ", item_id)
+    console.log("userID: ", userID)
+    const sql = `INSERT INTO favourites (user_id, item_id) VALUES ($1, $2) RETURNING *;`
     db.query(sql, [userID, item_id])
     .then(data => {
       res.redirect("/")
@@ -29,7 +30,7 @@ module.exports = (db) => {
     });
   });
 
-  router.post("/favourites/delete", (req, res) => {
+  router.post("/delete", (req, res) => {
     const item_id = req.body.itemId;
     const userID = req.session.user_id;
     const sql = `DELETE FROM favourites WHERE user_id = $1 AND item_id = $2 RETURNING *;`
