@@ -25,6 +25,7 @@
     <% }   %>
     <% favourites.forEach(x => favouritesID.push(x['item_id'])); %>
     <% for (let item of items) { %>
+      <% if (!item.is_sold) { %>
       <div class="item" style="background-image: url('<%= item.image_url %>')">
         <a href="http://localhost:8080/item/<%=item.id%>">
           <header>
@@ -39,14 +40,12 @@
           </header>
           <footer>
             <p style="font-weight: bold;">
-              <%= capitalize(item.name) %>
+              <%= capitalize(item.name)  %>
             </p>
           </footer>
         </a>
       </div>
-    <% } %>
+    <% } }%>
     </div>
   </body>
 </html>
-
-
