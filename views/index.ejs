@@ -24,7 +24,8 @@
       <%  return s.charAt(0).toUpperCase() + s.slice(1) %>
     <% }   %>
     <% favourites.forEach(x => favouritesID.push(x['item_id'])); %>
-    <% for (let item of items) { %>
+    <% let itemsReverse = items.reverse() %>
+    <% for (let item of itemsReverse) { %>
       <% if (!item.is_sold) { %>
       <div class="item" style="background-image: url('<%= item.image_url %>')">
         <a href="http://localhost:8080/item/<%=item.id%>">
