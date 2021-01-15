@@ -5,10 +5,10 @@ Sellers have a converstations page where they can access their messages with buy
 
 ## Final Product
 
-!["Homepage"](https://github.com/celsinga/)
-!["Item page"](https://github.com/celsinga/)
-!["Messages"](https://github.com/celsinga/)
-!["Search"](https://github.com/celsinga/)
+!["Homepage"](https://github.com/celsinga/buy-sell-app/blob/master/public/Screenshots/homepage.png)
+!["Item page"](https://github.com/celsinga/buy-sell-app/blob/master/public/Screenshots/item.png)
+!["Messages"](https://github.com/celsinga/buy-sell-app/blob/master/public/Screenshots/messages.png)
+!["Search"](https://github.com/celsinga/buy-sell-app/blob/master/public/Screenshots/search.png)
 
 ## Dependencies
 
